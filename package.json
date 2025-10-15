@@ -4,6 +4,15 @@
   "description": "Control oai2ollama service from VSCode",
   "version": "0.1.0",
   "publisher": "oai2ollama",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhso/vscode-oai2ollama.git",
+    "directory": "vscode-oai2ollama"
+  },
+  "bugs": {
+    "url": "https://github.com/dhso/vscode-oai2ollama/issues"
+  },
+  "homepage": "https://github.com/dhso/vscode-oai2ollama/tree/main/vscode-oai2ollama#readme",
   "engines": {
     "vscode": "^1.85.0"
   },

@@ -154,7 +154,7 @@ export OPENAI_BASE_URL=https://api.example.com/v1/
 ```json
 {
   "oai2ollama.apiKey": "sk-your-openai-key",
-  "oai2ollama.baseUrl": "https://api.openai.com/v1",
+  "oai2ollama.baseUrl": "https://api.openai.com/v1/",
   "oai2ollama.capabilities": ["tools", "vision"]
 }
 ```
@@ -163,7 +163,7 @@ export OPENAI_BASE_URL=https://api.example.com/v1/
 ```json
 {
   "oai2ollama.apiKey": "sk-ant-your-anthropic-key",
-  "oai2ollama.baseUrl": "https://api.anthropic.com/v1",
+  "oai2ollama.baseUrl": "https://api.anthropic.com/v1/",
   "oai2ollama.capabilities": ["tools", "vision"]
 }
 ```
@@ -172,7 +172,7 @@ export OPENAI_BASE_URL=https://api.example.com/v1/
 ```json
 {
   "oai2ollama.apiKey": "sk-ant-your-anthropic-key",
-  "oai2ollama.baseUrl": "https://api.anthropic.com/v1",
+  "oai2ollama.baseUrl": "https://api.anthropic.com/v1/",
   "oai2ollama.capabilities": ["tools", "vision", "thinking"]
 }
 ```
@@ -181,7 +181,7 @@ export OPENAI_BASE_URL=https://api.example.com/v1/
 ```json
 {
   "oai2ollama.apiKey": "your-deepseek-key",
-  "oai2ollama.baseUrl": "https://api.deepseek.com/v1",
+  "oai2ollama.baseUrl": "https://api.deepseek.com/v1/",
   "oai2ollama.capabilities": ["tools"]
 }
 ```
@@ -190,7 +190,7 @@ export OPENAI_BASE_URL=https://api.example.com/v1/
 ```json
 {
   "oai2ollama.apiKey": "your-api-key",
-  "oai2ollama.baseUrl": "https://your-custom-api.com/v1",
+  "oai2ollama.baseUrl": "https://your-custom-api.com/v1/",
   "oai2ollama.capabilities": ["tools"],
   "oai2ollama.models": ["custom-model-1", "custom-model-2"]
 }

@@ -44,7 +44,7 @@ Open VSCode Settings (`Ctrl+,` or `Cmd+,`) and search for "oai2ollama":
 ```json
 {
   "oai2ollama.apiKey": "your-api-key-here",
-  "oai2ollama.baseUrl": "https://api.openai.com/v1"
+  "oai2ollama.baseUrl": "https://api.openai.com/v1/"
 }
 ```
 
@@ -54,7 +54,7 @@ Open VSCode Settings (`Ctrl+,` or `Cmd+,`) and search for "oai2ollama":
 ```json
 {
   "oai2ollama.apiKey": "sk-...",
-  "oai2ollama.baseUrl": "https://api.openai.com/v1"
+  "oai2ollama.baseUrl": "https://api.openai.com/v1/"
 }
 ```
 
@@ -62,7 +62,7 @@ Open VSCode Settings (`Ctrl+,` or `Cmd+,`) and search for "oai2ollama":
 ```json
 {
   "oai2ollama.apiKey": "sk-ant-...",
-  "oai2ollama.baseUrl": "https://api.anthropic.com/v1"
+  "oai2ollama.baseUrl": "https://api.anthropic.com/v1/"
 }
 ```
 
@@ -70,7 +70,7 @@ Open VSCode Settings (`Ctrl+,` or `Cmd+,`) and search for "oai2ollama":
 ```json
 {
   "oai2ollama.apiKey": "your-deepseek-key",
-  "oai2ollama.baseUrl": "https://api.deepseek.com/v1"
+  "oai2ollama.baseUrl": "https://api.deepseek.com/v1/"
 }
 ```
 
@@ -112,7 +112,7 @@ curl -X POST http://localhost:11434/v1/chat/completions \
 ```json
 {
   "oai2ollama.apiKey": "sk-...",
-  "oai2ollama.baseUrl": "https://api.openai.com/v1",
+  "oai2ollama.baseUrl": "https://api.openai.com/v1/",
   "oai2ollama.capabilities": ["tools", "vision"]
 }
 ```
@@ -122,7 +122,7 @@ curl -X POST http://localhost:11434/v1/chat/completions \
 ```json
 {
   "oai2ollama.apiKey": "sk-ant-...",
-  "oai2ollama.baseUrl": "https://api.anthropic.com/v1",
+  "oai2ollama.baseUrl": "https://api.anthropic.com/v1/",
   "oai2ollama.capabilities": ["tools", "vision", "thinking"]
 }
 ```

@@ -37,7 +37,7 @@ code .
    ```json
    {
      "oai2ollama.apiKey": "sk-demo-key",
-     "oai2ollama.baseUrl": "https://api.openai.com/v1"
+     "oai2ollama.baseUrl": "https://api.openai.com/v1/"
    }
    ```
 

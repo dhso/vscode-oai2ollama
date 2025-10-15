@@ -30,7 +30,7 @@
 ```json
 {
   "oai2ollama.apiKey": "sk-your-api-key",
-  "oai2ollama.baseUrl": "https://api.openai.com/v1",
+  "oai2ollama.baseUrl": "https://api.openai.com/v1/",
   "oai2ollama.port": 11434,
   "oai2ollama.autoStart": true
 }
@@ -63,7 +63,7 @@ The extension will automatically detect and offer to kill the process. Or change
 
 ### API key not working
 - Check if the API key is correct
-- Verify the base URL is correct (should include `/v1` if needed)
+- Verify the base URL is correct (should include `/v1/` if needed)
 - Check the Output channel for detailed error messages
 
 ### Service won't start
