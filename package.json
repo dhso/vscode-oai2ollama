@@ -3,7 +3,11 @@
   "displayName": "Oai2Ollama",
   "description": "Control oai2ollama service from VSCode",
   "version": "0.1.0",
-  "publisher": "oai2ollama",
+  "publisher": "dhso",
+  "author": {
+    "name": "dhso",
+    "email": "dhso@163.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dhso/vscode-oai2ollama.git",
