@@ -2,8 +2,9 @@
   "name": "oai2ollama",
   "displayName": "Oai2Ollama",
   "description": "Control oai2ollama service from VSCode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "dhso",
+  "icon": "logo.png",
   "author": {
     "name": "dhso",
     "email": "dhso@163.com"
