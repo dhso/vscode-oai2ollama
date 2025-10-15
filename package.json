@@ -1,0 +1,119 @@
+{
+  "name": "oai2ollama",
+  "displayName": "Oai2Ollama",
+  "description": "Control oai2ollama service from VSCode",
+  "version": "0.1.0",
+  "publisher": "oai2ollama",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Oai2Ollama",
+      "properties": {
+        "oai2ollama.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for authentication (can also use OPENAI_API_KEY env var)",
+          "order": 1
+        },
+        "oai2ollama.baseUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Base URL for the OpenAI-compatible API (can also use OPENAI_BASE_URL env var)",
+          "order": 2
+        },
+        "oai2ollama.host": {
+          "type": "string",
+          "default": "localhost",
+          "description": "IP / hostname for the API server",
+          "order": 3
+        },
+        "oai2ollama.port": {
+          "type": "number",
+          "default": 11434,
+          "description": "Port for the API server",
+          "order": 4
+        },
+        "oai2ollama.capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "tools",
+              "insert",
+              "vision",
+              "embedding",
+              "thinking",
+              "completion"
+            ]
+          },
+          "default": [],
+          "description": "Extra capabilities to mark the model as supporting (completion is always included automatically)",
+          "order": 5
+        },
+        "oai2ollama.models": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Extra models to include in the /api/tags response",
+          "order": 6
+        },
+        "oai2ollama.autoStart": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically start oai2ollama service when VSCode starts",
+          "order": 7
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "oai2ollama.start",
+        "title": "Oai2Ollama: Start Service"
+      },
+      {
+        "command": "oai2ollama.stop",
+        "title": "Oai2Ollama: Stop Service"
+      },
+      {
+        "command": "oai2ollama.restart",
+        "title": "Oai2Ollama: Restart Service"
+      },
+      {
+        "command": "oai2ollama.showStatus",
+        "title": "Oai2Ollama: Show Status"
+      },
+      {
+        "command": "oai2ollama.openSettings",
+        "title": "Oai2Ollama: Open Settings"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.x",
+    "@vscode/vsce": "^2.x"
+  }
+}
