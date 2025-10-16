@@ -162,6 +162,7 @@ export class Oai2OllamaServer {
             }
         } catch (error: unknown) {
             const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+            console.error('Chat completions error:', errorMessage);
             if (!res.headersSent) {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: errorMessage }));
@@ -178,13 +179,24 @@ export class Oai2OllamaServer {
         const isHttps = upstream.protocol === 'https:';
         const httpModule = isHttps ? https : http;
 
+        // Serialize request data and calculate content length
+        const requestBody = JSON.stringify(requestData);
+        const contentLength = Buffer.byteLength(requestBody, 'utf8');
+
+        // Fix path construction to ensure proper slash handling
+        const pathPrefix = upstream.pathname.endsWith('/')
+            ? upstream.pathname
+            : upstream.pathname + '/';
+        const fullPath = pathPrefix + 'chat/completions';
+
         const options = {
             hostname: upstream.hostname,
             port: upstream.port || (isHttps ? 443 : 80),
-            path: upstream.pathname + 'chat/completions',
+            path: fullPath,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Content-Length': contentLength,
                 'Authorization': `Bearer ${this.config.apiKey}`
             }
         };
@@ -197,6 +209,8 @@ export class Oai2OllamaServer {
             });
 
             proxyRes.on('data', (chunk) => {
+                // console.log('Received chunk:', chunk.toString('utf8'));
+                // console.log('Chunk size:', chunk.length, 'bytes');
                 res.write(chunk);
             });
 
@@ -206,13 +220,14 @@ export class Oai2OllamaServer {
         });
 
         proxyReq.on('error', (error) => {
+            console.error('Proxy request error:', error);
             if (!res.headersSent) {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: error.message }));
             }
         });
 
-        proxyReq.write(JSON.stringify(requestData));
+        proxyReq.write(requestBody);
         proxyReq.end();
     }
 
